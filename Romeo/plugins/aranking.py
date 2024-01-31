@@ -14,7 +14,7 @@ mongodb_uri = 'MONGO_URL'
 
 # Initialize MongoDB client
 mongo_client = MongoClient(mongodb_uri)
-db = mongo_client['telegram_bot']
+db = mongo_client['Romeo_messagecount_bot']
 messages_collection = db['group_messages']
 
 # Dictionary to store message counts for each chat_id and user
