@@ -2,7 +2,7 @@
     "name": "Romeo-Userbot",
     "description": "An first Telegram Userbot with multi Clients for Spamming or Mass.",
     "keywords": ["pyrogram", "userbot"],
-    "repository": "https://github.com/RRomeo-RJ/Romeo-UserBot",
+    "repository": "https://github.com/Testromeo1/Romeo-Chatfightbot",
   "stack": "container",
     "env": {
         "STRING_SESSION": {
@@ -21,6 +21,11 @@
         },
         "BOT_TOKEN": {
             "description": "fill with your bot token get from @BotFather on telegram",
+            "required": true,
+            "value": ""
+        },
+        "MONGO_URL": {
+            "description": "Fill there an mongo database from mongodb.com",
             "required": true,
             "value": ""
         },
