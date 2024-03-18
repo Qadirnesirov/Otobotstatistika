@@ -5,8 +5,8 @@ from Romeo import client, app
 
 async def start_bot():
     await app.start()
-    print("LOG: Founded Bot token Booting..")
-    print("USERBOT SUCCESSFULLY STARTED ✅✅")
+    print("LOG: Əsas Bot token Booting..")
+    print("USERBOT UĞURLA BAŞLADI✅✅")
     await client.start()
     await idle()
 
