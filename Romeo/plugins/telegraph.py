@@ -9,7 +9,7 @@ r = telegraph.create_account(short_name="telegram")
 auth_url = r["auth_url"]
 
 def get_text(message: Message) -> [None, str]:
-    """Extract Text From Commands"""
+    """Əmrlərdən mətni çıxarın"""
     text_to_return = message.text
     if message.text is None:
         return None
@@ -23,10 +23,10 @@ def get_text(message: Message) -> [None, str]:
 
 @Client.on_message(filters.command(["tg", "telegraph", "tm", "tgt"], ".") & (filters.me | filters.user(SUDO_USER)))
 async def uptotelegraph(client: Client, message: Message):
-    tex = await message.edit_text("`Processing . . .`")
+    tex = await message.edit_text("`Emal edilir . . .`")
     if not message.reply_to_message:
         await tex.edit(
-            "**Reply to an Image or text.**"
+            "**Şəkil və ya mətnə ​​cavab verin.**"
         )
         return
     if message.reply_to_message.media:
