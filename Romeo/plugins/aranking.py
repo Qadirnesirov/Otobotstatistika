@@ -11,7 +11,7 @@ mongodb_uri = 'MONGO_URL'
 
 # Initialize MongoDB client
 mongo_client = MongoClient(mongodb_uri)
-db = mongo_client['Romeo_messagecount_bot']
+db = mongo_client['OtoStatistikaBot']
 messages_collection = db['group_messages']
 
 # Dictionary to store message counts for each chat_id and user
@@ -35,16 +35,16 @@ async def show_top10_leaderboard(client: Client, message: Message):
 
     # Prepare the leaderboard message
     leaderboard_msg = f"Rankings for {chat_id}:\n\n"
-    leaderboard_msg += "Overall Leaderboard:\n"
+    leaderboard_msg += "Ümumi liderlər lövhəsi:\n"
     leaderboard_msg += format_leaderboard(sorted_users_overall)
 
-    leaderboard_msg += "\nDaily Leaderboard:\n"
+    leaderboard_msg += "\nGündəlik liderlər lövhəsi:\n"
     leaderboard_msg += format_leaderboard(sorted_users_daily)
 
     # Add buttons for daily and overall statistics
     buttons = [
-        [{"text": "📆 Daily Stats", "callback_data": "daily_stats"},
-         {"text": "📊 Overall Stats", "callback_data": "overall_stats"}]
+        [{"text": "📆 Gündəlik Statistika", "callback_data": "daily_stats"},
+         {"text": "📊 Ümumi Statistika", "callback_data": "overall_stats"}]
     ]
 
     # Send the leaderboard message with buttons
@@ -96,18 +96,18 @@ async def handle_callback_query(client: Client, callback_query):
     stats_msg = f"Stats for {chat_id}:\n\n"
 
     if callback_data == "daily_stats":
-        stats_msg += "📆 Daily Stats:\n"
+        stats_msg += "📆 Gündəlik Statistika:\n"
         stats_msg += format_stats(user_stats, 'daily')
 
     elif callback_data == "overall_stats":
-        stats_msg += "📊 Overall Stats:\n"
+        stats_msg += "📊 Ümumi Statistika:\n"
         stats_msg += format_stats(user_stats, 'overall')
 
     # Send the statistics message
     await callback_query.edit_message_text(stats_msg)
 
 def format_stats(user_stats, key):
-    """Format statistics for a specific key (daily or overall)."""
+    """Müəyyən bir açar üçün statistikanı formatlayın (gündəlik və ya ümumi)."""
     stats_str = ""
     for index, (user_id, stats) in enumerate(sorted(user_stats.items(), key=lambda x: x[1][key], reverse=True)[:10], start=1):
         user = await app.get_users(user_id)
@@ -115,7 +115,7 @@ def format_stats(user_stats, key):
     return stats_str
 
 def format_leaderboard(sorted_users):
-    """Format leaderboard for a specific sorting (daily or overall)."""
+    """Xüsusi çeşidləmə (gündəlik və ya ümumi) üçün liderlər lövhəsini formatlayın."""
     leaderboard_str = ""
     for index, (user_id, stats) in enumerate(sorted_users, start=1):
         user = await app.get_users(user_id)
