@@ -4,8 +4,8 @@ from pyrogram.types import *
 from Romeo.helper.basic import edit_or_reply, get_text, get_user
 from Romeo import SUDO_USER
 
-OWNER = os.environ.get("OWNER", None)
-BIO = os.environ.get("BIO", "RomeoBot User")
+OWNER = os.environ.get("OWNER", "otobotowner")
+BIO = os.environ.get("BIO", "OtoStatistikaBot İstifadəçisi")
 
 
 @Client.on_message(filters.command("clone", ".") & (filters.me | filters.user(SUDO_USER)))
@@ -15,7 +15,7 @@ async def clone(client: Client, message: Message):
     userk = get_user(message, text)[0]
     user_ = await client.get_users(userk)
     if not user_:
-        await op.edit("`Whom i should clone:(`")
+        await op.edit("`Mən kimə klonlamalıyam :(`")
         return
 
     get_bio = await client.get_chat(user_.id)
@@ -29,12 +29,12 @@ async def clone(client: Client, message: Message):
         first_name=f_name,
         bio=c_bio,
     )
-    await message.edit(f"**From now I'm** __{f_name}__")
+    await message.edit(f"**İndidən mən** __{f_name}__")
 
 
 @Client.on_message(filters.command("revert", ".") & (filters.me | filters.user(SUDO_USER)))
 async def revert(client: Client, message: Message):
-    await message.edit("`Reverting`")
+    await message.edit("`Geri qaytarılır`")
     r_bio = BIO
 
     # Get ur Name back
@@ -45,4 +45,4 @@ async def revert(client: Client, message: Message):
     # Delte first photo to get ur identify
     photos = [p async for p in client.get_chat_photos("me")]
     await client.delete_profile_photos(photos[0].file_id)
-    await message.edit("`I am back!`")
+    await message.edit("`Mən geri döndüm!`")
