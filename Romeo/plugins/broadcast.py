@@ -16,9 +16,9 @@ def get_arg(message: Message):
 @Client.on_message(filters.command(["gcast"], ".") & (filters.me | filters.user(SUDO_USER)))
 async def gcast(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        tex = await message.reply_text("`Started global broadcast...`")
+        tex = await message.reply_text("`Qlobal yayım başladı...`")
     else:
-        return await message.edit_text("**Give A Message or Reply**")
+        return await message.edit_text("**Mesaj və ya cavab verin**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -39,15 +39,15 @@ async def gcast(client: Client, message: Message):
                 except Exception:
                     error += 1
                     await asyncio.sleep(0.3)
-    await tex.edit_text(f"**Successfully Sent Message To** `{done}` **Groups, chat, Failed to Send Message To** `{error}` **Groups**")
+    await tex.edit_text(f"**Mesaj Uğurla Göndərildi** `{done}` **Qruplar, söhbət, Mesaj Göndərmək Olmadı** `{error}` **Qruplar**")
 
 
 @Client.on_message(filters.command(["gucast"], ".") & (filters.me | filters.user(SUDO_USER)))
 async def gucast(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        tex = await message.reply_text("`Started global broadcast...`")
+        tex = await message.reply_text("`Qlobal yayım başladı...`")
     else:
-        return await message.edit_text("**Give A Message or Reply**")
+        return await message.edit_text("**Mesaj və ya cavab verin**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -68,4 +68,4 @@ async def gucast(client: Client, message: Message):
                 except Exception:
                     error += 1
                     await asyncio.sleep(0.3)
-    await text.edit_text(f"**Successfully Sent Message To** `{done}` **chat, Failed to Send Message To** `{error}` **chat**")
+    await text.edit_text(f"**Mesaj Uğurla Göndərildi** `{done}` **chat, Mesaj göndərmək alınmadı** `{error}` **chat**")
