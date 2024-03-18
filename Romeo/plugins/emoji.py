@@ -126,13 +126,13 @@ rtemoji = [
 
 @Client.on_message(filters.command(["emoji", "ej"], ".") & (filters.me | filters.user(SUDO_USER)))
 async def emoji(client: Client, message: Message):
-    op = await edit_or_reply(message, "`Emojifying the text..`")
+    op = await edit_or_reply(message, "`Mətni emojiya edir..`")
     args = get_text(message)
     if not args:
         if not message.reply_to_message:
-           return await ok.edit("__What am I Supposed to do with this idiot, Give me a text.__")
+           return await ok.edit("Nə edim bu axmaqla, Ver mənə mətn.")
         if not message.reply_to_message.text:
-           return await ok.edit("__What am I Supposed to do with this idiot, Give me a text.__")
+           return await ok.edit("Nə edim bu axmaqla, Ver mənə mətn.")
     args = args or message.reply_to_message.text
     
     result = ""
@@ -148,13 +148,13 @@ async def emoji(client: Client, message: Message):
 
 @Client.on_message(filters.command(["cmoji", "cj"], ".") & (filters.me | filters.user(SUDO_USER)))
 async def cmoji(client: Client, message: Message):
-    op = await edit_or_reply(message, "`Emojifying the text..`")
+    op = await edit_or_reply(message, "`Mətni emojiya edir..`")
     args = get_text(message)
     if not args:
         if not message.reply_to_message:
-           return await ok.edit("__What am I Supposed to do with this idiot, Give me a text.__")
+           return await ok.edit("Nə edim bu axmaqla, Ver mənə mətn.")
         if not message.reply_to_message.text:
-           return await ok.edit("__What am I Supposed to do with this idiot, Give me a text.__")
+           return await ok.edit("Nə edim bu axmaqla, Ver mənə mətn.")
     args = args or message.reply_to_message.text
     try:
         emoji, arg = args.split(" ", 1)
