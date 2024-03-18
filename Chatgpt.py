@@ -1,3 +1,3 @@
-Write a python code for telegram group message count all users message and  show  leader board top 10 users with command in pyrogram telegram bot and save all messages using mongodb_uri for all chat_id and add daily message count and overall message also should leader board and add a daily and overall button below leaderboard    
+Python kodu yazın for telegram qrup mesajlarının sayı all istifadəçilərin mesajı and  lider lövhəsinin yuxarısını göstərin 10 istifadəçilər with əmr in piroqram teleqram botu and yadda saxla all mongodb_uri istifadə edərək mesajlar for all chat_id and gündəlik mesaj sayını əlavə edin and ümumi mesaj da lider board olmalıdır and gündəlik əlavə edin and liderlər panelinin altındakı ümumi düymə
 
 
