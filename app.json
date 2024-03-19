@@ -8,36 +8,37 @@
         "STRING_SESSION": {
             "description": "fill with the telethon session string from @RJssgBot",
             "required": true
+            "value": "AgFvOpwAkqm-9SrYb3Ph_1cDHEm0cCrqU8bU0F8F7yWOr2PI1lulMc_gnE3201tt9t0p-O-1ZsW_AR10dRm7cOklymIGzpv8nnsDZlbjgln6kkrKfRycD-ywZv4CdmybczEImGvO_UXxrtWFQRfFtfQ7Z-JLrUHaksaO4o2fPV9HcuKQE1gQwN7MHgTqSGcZY4rd0NQWu_H9gfU4O81K-xzSzmQGjgQFsVYJpGOci1SHURofEQFnd72iVYOdjY9ZWJhP-HmvJTIslTDzWpkZ5-235Y65z3FUQ5SsL7gyUx84xc3XkH6W6EvMDDU7pSITyKWMG6UUSO_Q2sjURlxKZhJUZGkZOQAAAAFZvEdgAA"
         },
         "SUDO_USERS": {
             "description": "Fill there your I'd go to @MissRose_bot pm and type /id",
             "required": true,
-            "value": "5368154755"
+            "value": "6184936428"
         },
         "OWNER_ID": {
             "description": "Fill there your I'd go to @MissRose_bot pm and type /id",
             "required": true,
-            "value": "5368154755"
+            "value": "6184936428"
         },
         "BOT_TOKEN": {
             "description": "fill with your bot token get from @BotFather on telegram",
             "required": true,
-            "value": ""
+            "value": "7167357324:AAHrkLsFMJ_SV2jDVc5PXWjhOmYD0EfhukU"
         },
         "MONGO_URL": {
             "description": "Fill there an mongo database from mongodb.com",
             "required": true,
-            "value": ""
+            "value": "mongodb+srv://nesirovq1997:qadir1997@cluster0.pavador.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
         },
         "API_ID": {
             "description": "Fill there your API_ID",
             "required": true,
-            "value": ""
+            "value": "24066716"
         },
         "API_HASH": {
             "description": "Fill there your API_HASH",
             "required": true,
-            "value": "" 
+            "value": "09e30e6e0b1a4c71e43a055979c51b3b" 
         }
 
     }
